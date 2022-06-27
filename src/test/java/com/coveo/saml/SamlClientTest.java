@@ -19,7 +19,7 @@ import org.apache.commons.codec.binary.Base64;
 import org.joda.time.DateTime;
 import org.joda.time.DateTimeZone;
 import org.junit.Test;
-import org.opensaml.saml.saml2.core.StatusCode;
+import org.opensaml.saml2.core.StatusCode;
 import org.opensaml.xmlsec.signature.Signature;
 
 public class SamlClientTest {

@@ -21,7 +21,7 @@ import java.util.Objects;
 
 import org.apache.commons.lang3.StringUtils;
 import org.opensaml.saml.common.SAMLVersion;
-import org.opensaml.saml.saml2.core.LogoutRequest;
+import org.opensaml.saml2.core.LogoutRequest;
 
 public class LogoutRequestSchemaValidator {
   public void validate(LogoutRequest request) throws SamlException {
