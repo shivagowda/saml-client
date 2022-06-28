@@ -57,10 +57,11 @@
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
 
-    <opensaml.version>3.4.5</opensaml.version>
+    <opensaml.version>4.0.1</opensaml.version>
   </properties>
 
   <dependencies>
+
     <dependency>
       <groupId>javax.servlet</groupId>
       <artifactId>javax.servlet-api</artifactId>
