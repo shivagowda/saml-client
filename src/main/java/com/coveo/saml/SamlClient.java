@@ -48,28 +48,28 @@ import org.opensaml.saml.common.SAMLObject;
 import org.opensaml.saml.common.SAMLVersion;
 import org.opensaml.saml.common.SignableSAMLObject;
 import org.opensaml.saml.metadata.resolver.impl.DOMMetadataResolver;
-import org.opensaml.saml.saml2.core.Assertion;
-import org.opensaml.saml.saml2.core.Attribute;
-import org.opensaml.saml.saml2.core.AttributeStatement;
-import org.opensaml.saml.saml2.core.AuthnRequest;
-import org.opensaml.saml.saml2.core.EncryptedAssertion;
-import org.opensaml.saml.saml2.core.Issuer;
-import org.opensaml.saml.saml2.core.LogoutRequest;
-import org.opensaml.saml.saml2.core.LogoutResponse;
-import org.opensaml.saml.saml2.core.NameID;
-import org.opensaml.saml.saml2.core.NameIDPolicy;
-import org.opensaml.saml.saml2.core.RequestAbstractType;
-import org.opensaml.saml.saml2.core.Response;
-import org.opensaml.saml.saml2.core.Status;
-import org.opensaml.saml.saml2.core.StatusCode;
-import org.opensaml.saml.saml2.core.StatusMessage;
-import org.opensaml.saml.saml2.core.impl.StatusCodeBuilder;
-import org.opensaml.saml.saml2.core.impl.StatusMessageBuilder;
-import org.opensaml.saml.saml2.encryption.Decrypter;
-import org.opensaml.saml.saml2.metadata.EntityDescriptor;
-import org.opensaml.saml.saml2.metadata.IDPSSODescriptor;
-import org.opensaml.saml.saml2.metadata.KeyDescriptor;
-import org.opensaml.saml.saml2.metadata.SingleSignOnService;
+import org.opensaml.saml2.core.Assertion;
+import org.opensaml.saml2.core.Attribute;
+import org.opensaml.saml2.core.AttributeStatement;
+import org.opensaml.saml2.core.AuthnRequest;
+import org.opensaml.saml2.core.EncryptedAssertion;
+import org.opensaml.saml2.core.Issuer;
+import org.opensaml.saml2.core.LogoutRequest;
+import org.opensaml.saml2.core.LogoutResponse;
+import org.opensaml.saml2.core.NameID;
+import org.opensaml.saml2.core.NameIDPolicy;
+import org.opensaml.saml2.core.RequestAbstractType;
+import org.opensaml.saml2.core.Response;
+import org.opensaml.saml2.core.Status;
+import org.opensaml.saml2.core.StatusCode;
+import org.opensaml.saml2.core.StatusMessage;
+import org.opensaml.saml2.core.impl.StatusCodeBuilder;
+import org.opensaml.saml2.core.impl.StatusMessageBuilder;
+import org.opensaml.saml2.encryption.Decrypter;
+import org.opensaml.saml2.metadata.EntityDescriptor;
+import org.opensaml.saml2.metadata.IDPSSODescriptor;
+import org.opensaml.saml2.metadata.KeyDescriptor;
+import org.opensaml.saml2.metadata.SingleSignOnService;
 import org.opensaml.security.SecurityException;
 import org.opensaml.security.credential.Credential;
 import org.opensaml.security.credential.UsageType;
@@ -648,7 +648,8 @@ public class SamlClient {
    * @param privateKey the private key
    * @throws SamlException if publicKey and privateKey don't form a valid credential
    */
-  private BasicX509Credential generateBasicX509Credential(String publicKey, String privateKey) throws SamlException {
+  private BasicX509Credential generateBasicX509Credential(String publicKey, String privateKey)
+      throws SamlException {
     if (publicKey == null || privateKey == null) {
       throw new SamlException("No credentials provided");
     }
@@ -689,7 +690,8 @@ public class SamlClient {
    * @param privateKey the private key
    * @throws SamlException if publicKey and privateKey don't form a valid credential
    */
-  public void addAdditionalSPKey(X509Certificate certificate, PrivateKey privateKey) throws SamlException {
+  public void addAdditionalSPKey(X509Certificate certificate, PrivateKey privateKey)
+      throws SamlException {
     additionalSpCredentials.add(new BasicX509Credential(certificate, privateKey));
   }
 
@@ -942,11 +944,11 @@ public class SamlClient {
       // Create a decrypter.
       List<KeyInfoCredentialResolver> resolverChain = new ArrayList<>();
 
-      if(spCredential != null) {
+      if (spCredential != null) {
         resolverChain.add(new StaticKeyInfoCredentialResolver(spCredential));
       }
 
-      if(!additionalSpCredentials.isEmpty()) {
+      if (!additionalSpCredentials.isEmpty()) {
         resolverChain.add(new CollectionKeyInfoCredentialResolver(additionalSpCredentials));
       }
 

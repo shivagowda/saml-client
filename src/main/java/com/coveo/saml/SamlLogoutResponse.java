@@ -1,9 +1,9 @@
 package com.coveo.saml;
 
-import org.opensaml.saml.saml2.core.Status;
-import org.opensaml.saml.saml2.core.StatusCode;
-import org.opensaml.saml.saml2.core.StatusDetail;
-import org.opensaml.saml.saml2.core.StatusMessage;
+import org.opensaml.saml2.core.Status;
+import org.opensaml.saml2.core.StatusCode;
+import org.opensaml.saml2.core.StatusDetail;
+import org.opensaml.saml2.core.StatusMessage;
 
 /**
  * The type Saml logout response.
